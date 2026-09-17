@@ -6,6 +6,7 @@ import { copyFileSync } from "fs";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/ebdaa-almanzel/",
   server: {
     host: "::",
     port: 8080,
@@ -48,3 +49,6 @@ export default defineConfig(({ mode }) => ({
     chunkSizeWarningLimit: 1000,
   },
 }));
+
+
+
