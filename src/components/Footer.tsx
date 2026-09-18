@@ -51,7 +51,7 @@ export const Footer = () => {
             <div className="mb-6 flex items-center gap-3">
               <div className="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-bronze/30 bg-white p-1">
                 <img
-                  src="/icon1/icon.webp"
+                  src={`${import.meta.env.BASE_URL}icon1/icon.webp`}
                   alt={client.shortName}
                   className="h-full w-full object-contain"
                   width="48"

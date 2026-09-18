@@ -125,7 +125,7 @@ const Header = () => {
           >
             <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg border border-bronze/20 bg-white p-1.5 shadow-sm transition-all duration-300 group-hover:border-bronze/40 group-hover:shadow-md">
               <img
-                src="/icon1/icon.webp"
+                src={`${import.meta.env.BASE_URL}icon1/icon.webp`}
                 alt="مؤسسة إبداع المنزل للمقاولات العامة - مظلات وسواتر هناجر عزل تنسيق حدائق"
                 className="h-full w-full object-contain"
                 width="48"
