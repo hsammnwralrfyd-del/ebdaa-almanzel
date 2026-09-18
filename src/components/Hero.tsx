@@ -11,7 +11,7 @@ export const Hero = () => {
     >
       {/* صورة الخلفية */}
       <img
-        src="/hero1/w.webp"
+        src={`${import.meta.env.BASE_URL}hero1/w.webp`}
         alt="مظلات الدمام والخبر - مقاولات عامة الدمام والخبر - مظلات وسواتر المنطقة الشرقية"
         className="absolute inset-0 h-full w-full object-cover object-center"
         fetchPriority="high"

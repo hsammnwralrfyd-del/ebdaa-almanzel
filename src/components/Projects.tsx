@@ -59,7 +59,7 @@ export const Projects = () => {
             {client.projects.slice(0, 6).map((project, index) => {
               const serviceId = projectServiceMap[project.title] as keyof typeof servicesById;
               const service = serviceId ? servicesById[serviceId] : null;
-              const projectImage = service?.cardImage || `/projects1/${(index % 9) + 1}.webp`;
+              const projectImage = service?.cardImage || `${import.meta.env.BASE_URL}projects1/${(index % 9) + 1}.webp`;
 
               return (
               <Link
@@ -189,3 +189,5 @@ export const Projects = () => {
     </section>
   );
 };
+
+
