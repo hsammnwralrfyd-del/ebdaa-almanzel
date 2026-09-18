@@ -1,5 +1,4 @@
-Contact: https://muthallat.com
-Expires: 2026-12-31T23:59:59.000Z
+﻿Contact: https://hsammnwralrfyd-del.github.io/ebdaa-almanzel/
+Expires: 2027-09-18T00:00:00Z
 Preferred-Languages: ar, en
-Canonical: https://muthallat.com/.well-known/security.txt
-
+Canonical: https://hsammnwralrfyd-del.github.io/ebdaa-almanzel/.well-known/security.txt

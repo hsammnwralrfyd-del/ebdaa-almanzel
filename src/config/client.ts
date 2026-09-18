@@ -16,13 +16,13 @@ export const client = {
 
   phoneIntl: "966554271816",
 
-  siteUrl: "https://muthallat.com",
+  siteUrl: "https://hsammnwralrfyd-del.github.io/ebdaa-almanzel/",
 
   instagram: "https://www.instagram.com/aq571638694",
 
   tiktok: "https://vt.tiktok.com/ZSq52qGtk",
 
-  mapsUrl: "https://maps.app.goo.gl/uqDHmFPQSiLbADp96",
+  mapsUrl: "https://maps.app.goo.gl/ZS5dqatYaaYaNuqe6?g_st=awb",
 
   accentColor: "#C9A227",
 
@@ -189,7 +189,7 @@ export const client = {
   socialMedia: {
     tiktok: "https://vt.tiktok.com/ZSq52qGtk",
     instagram: "https://www.instagram.com/aq571638694",
-    googleMaps: "https://maps.app.goo.gl/uqDHmFPQSiLbADp96",
+    googleMaps: "https://maps.app.goo.gl/ZS5dqatYaaYaNuqe6?g_st=awb",
   },
 
   serviceAreas: [

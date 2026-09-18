@@ -10,7 +10,7 @@ interface SEOProps {
   structuredData?: object;
 }
 
-const SITE_URL = "https://muthallat.com";
+const SITE_URL = "https://hsammnwralrfyd-del.github.io/ebdaa-almanzel";
 const DEFAULT_IMAGE = `${SITE_URL}/services1/1.webp`;
 
 export const useSEO = ({
