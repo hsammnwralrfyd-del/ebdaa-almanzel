@@ -1,4 +1,4 @@
-import { ArrowLeft, Building2, MapPin, Calendar, CheckCircle, LayoutGrid } from "lucide-react";
+﻿import { ArrowLeft, Building2, MapPin, Calendar, CheckCircle, LayoutGrid } from "lucide-react";
 import { Link } from "react-router-dom";
 import { client } from "@/config/client";
 import { servicesList, servicesById } from "@/config/services";
@@ -7,11 +7,9 @@ import { servicesList, servicesById } from "@/config/services";
 const galleryImages = servicesList.flatMap(service =>
   Array.from(
     { length: service.galleryImageCount },
-    (_, index) => `/${service.folder}/${index + 1}.webp`
+    (_, index) => `${import.meta.env.BASE_URL}${service.folder}/${index + 1}.webp`
   )
-);
-
-// Map project titles to service IDs for images
+);// Map project titles to service IDs for images
 const projectServiceMap: Record<string, string> = {
   "مظلات شد إنشائي": "structuralCanopies",
   "مظلات مدارس": "schoolCanopies",
@@ -59,7 +57,7 @@ export const Projects = () => {
             {client.projects.slice(0, 6).map((project, index) => {
               const serviceId = projectServiceMap[project.title] as keyof typeof servicesById;
               const service = serviceId ? servicesById[serviceId] : null;
-              const projectImage = service?.cardImage || `${import.meta.env.BASE_URL}projects1/${(index % 9) + 1}.webp`;
+              const projectImage = service?.cardImage || servicesList[index % servicesList.length]?.cardImage;
 
               return (
               <Link
@@ -189,5 +187,9 @@ export const Projects = () => {
     </section>
   );
 };
+
+
+
+
 
 

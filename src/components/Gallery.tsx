@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { cn } from "@/lib/utils";
 import {
   ChevronRight,
@@ -14,7 +14,7 @@ const galleryImages = servicesList.flatMap(service =>
   Array.from(
     { length: service.galleryImageCount },
     (_, index) => ({
-      src: `/${service.folder}/${index + 1}.webp`,
+      src: `${import.meta.env.BASE_URL}${service.folder}/${index + 1}.webp`,
       alt: `${service.title} - مؤسسة إبداع المنزل للمقاولات العامة`
     })
   )
@@ -199,3 +199,4 @@ export const Gallery = () => {
     </section>
   );
 };
+
