@@ -1,4 +1,4 @@
-import { Phone, MessageCircle, ArrowDown, HardHat } from "lucide-react";
+﻿import { Phone, MessageCircle, ArrowDown, HardHat } from "lucide-react";
 
 import { client, contactLinks } from "@/config/client";
 
@@ -23,7 +23,7 @@ export const Hero = () => {
       {/* المحتوى فوق الصورة */}
       <div className="relative z-10 flex min-h-[100dvh] items-center px-5 py-28 sm:px-8 lg:px-16">
         <div className="w-full max-w-3xl animate-elegant-fade">
-          
+
           {/* الشارة */}
           <div className="section-badge mb-6 inline-flex">
             <HardHat size={14} className="shrink-0 text-bronze" />

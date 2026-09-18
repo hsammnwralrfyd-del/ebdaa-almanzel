@@ -22,7 +22,7 @@ export const client = {
 
   tiktok: "https://vt.tiktok.com/ZSq52qGtk",
 
-  mapsUrl: "https://maps.app.goo.gl/ZS5dqatYaaYaNuqe6?g_st=awb",
+  mapsUrl: "https://maps.app.goo.gl/ZS5dqatYaaNuqe6?g_st=awb",
 
   accentColor: "#C9A227",
 
@@ -189,7 +189,7 @@ export const client = {
   socialMedia: {
     tiktok: "https://vt.tiktok.com/ZSq52qGtk",
     instagram: "https://www.instagram.com/aq571638694",
-    googleMaps: "https://maps.app.goo.gl/ZS5dqatYaaYaNuqe6?g_st=awb",
+    googleMaps: "https://maps.app.goo.gl/ZS5dqatYaaNuqe6?g_st=awb",
   },
 
   serviceAreas: [
@@ -209,3 +209,4 @@ export const contactLinks = {
 
   instagram: client.instagram,
 };
+

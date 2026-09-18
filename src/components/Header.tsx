@@ -1,9 +1,8 @@
-import {
+﻿import {
   Phone,
   MessageCircle,
   Menu,
   X,
-  ChevronDown,
 } from "lucide-react";
 import { useEffect, useState, type MouseEvent } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -41,6 +40,7 @@ const Header = () => {
     } else {
       document.body.style.overflow = "";
     }
+
     return () => {
       document.body.style.overflow = "";
     };
@@ -51,10 +51,17 @@ const Header = () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
+
     const element = document.querySelector(hash);
     if (!element) return;
-    const offset = element.getBoundingClientRect().top + window.scrollY - 88;
-    window.scrollTo({ top: offset, behavior: "smooth" });
+
+    const offset =
+      element.getBoundingClientRect().top + window.scrollY - 88;
+
+    window.scrollTo({
+      top: offset,
+      behavior: "smooth",
+    });
   };
 
   const handleNavigation = (
@@ -84,13 +91,19 @@ const Header = () => {
 
   useEffect(() => {
     if (!isHome || !location.hash) return;
-    const timer = setTimeout(() => scrollToHash(location.hash), 200);
+
+    const timer = setTimeout(
+      () => scrollToHash(location.hash),
+      200
+    );
+
     return () => clearTimeout(timer);
   }, [isHome, location.hash]);
 
   const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
     event.preventDefault();
     setOpen(false);
+
     if (isHome) {
       navigate("/", { replace: true });
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -116,7 +129,8 @@ const Header = () => {
 
       <div className="section-container">
         <div className="flex items-center justify-between gap-4">
-          {/* Logo - RIGHT side in RTL */}
+
+          {/* الشعار */}
           <Link
             to="/"
             onClick={handleLogoClick}
@@ -126,7 +140,7 @@ const Header = () => {
             <div className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-lg border border-bronze/20 bg-white p-1.5 shadow-sm transition-all duration-300 group-hover:border-bronze/40 group-hover:shadow-md">
               <img
                 src={`${import.meta.env.BASE_URL}icon1/icon.webp`}
-                alt="مؤسسة إبداع المنزل للمقاولات العامة - مظلات وسواتر هناجر عزل تنسيق حدائق"
+                alt="مؤسسة إبداع المنزل للمقاولات العامة - مظلات وسواتر وهناجر وعزل وتنسيق حدائق"
                 className="h-full w-full object-contain"
                 width="48"
                 height="48"
@@ -135,16 +149,20 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Navigation - CENTER */}
+          {/* القائمة الرئيسية */}
           <nav className="hidden flex-1 items-center justify-center lg:flex">
             <div className="flex items-center gap-1">
               {navItems.map((item) => {
-                const isActive = isHome && location.hash === item.hash;
+                const isActive =
+                  isHome && location.hash === item.hash;
+
                 return (
                   <a
                     key={item.hash}
                     href={isHome ? item.hash : `/${item.hash}`}
-                    onClick={(e) => handleNavigation(e, item.hash)}
+                    onClick={(e) =>
+                      handleNavigation(e, item.hash)
+                    }
                     className={`relative px-5 py-2.5 text-sm font-semibold transition-all duration-200 ${
                       isActive
                         ? "text-bronze-dark"
@@ -152,8 +170,9 @@ const Header = () => {
                     }`}
                   >
                     {item.label}
+
                     {isActive && (
-                      <span className="absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-full bg-bronze rounded-full" />
+                      <span className="absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 rounded-full bg-bronze" />
                     )}
                   </a>
                 );
@@ -161,15 +180,19 @@ const Header = () => {
             </div>
           </nav>
 
-          {/* CTA Buttons - LEFT side in RTL */}
+          {/* أزرار التواصل */}
           <div className="hidden items-center gap-3 md:flex">
             <a
               href={contactLinks.phone}
               className="flex h-10 items-center gap-2 rounded-md border border-bronze/20 bg-white px-4 text-sm font-semibold text-charcoal transition-all duration-200 hover:border-bronze/40 hover:bg-ivory/50 hover:text-bronze-dark"
             >
-              <Phone size={16} className="shrink-0 text-bronze" />
+              <Phone
+                size={16}
+                className="shrink-0 text-bronze"
+              />
               <span>اتصل الآن</span>
             </a>
+
             <a
               href={contactLinks.whatsapp}
               target="_blank"
@@ -181,46 +204,65 @@ const Header = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* زر القائمة للجوال */}
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
+            aria-label={
+              open ? "إغلاق القائمة" : "فتح القائمة"
+            }
             aria-expanded={open}
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-bronze/20 bg-white text-charcoal transition-colors hover:border-bronze/40 hover:bg-ivory/50 lg:hidden"
           >
-            {open ? <X size={20} className="text-bronze" /> : <Menu size={20} />}
+            {open ? (
+              <X size={20} className="text-bronze" />
+            ) : (
+              <Menu size={20} />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Mobile menu overlay */}
+      {/* خلفية قائمة الجوال */}
       <div
         className={`fixed inset-0 top-[64px] z-40 bg-charcoal/30 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          open ? "opacity-100" : "pointer-events-none opacity-0"
+          open
+            ? "opacity-100"
+            : "pointer-events-none opacity-0"
         }`}
         onClick={() => setOpen(false)}
         aria-hidden="true"
       />
 
+      {/* قائمة الجوال */}
       <div
         className={`fixed inset-x-0 top-[64px] z-50 max-h-[calc(100dvh-64px)] overflow-y-auto border-t border-bronze/10 bg-white shadow-lg transition-all duration-300 lg:hidden ${
-          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+          open
+            ? "translate-y-0 opacity-100"
+            : "pointer-events-none -translate-y-2 opacity-0"
         }`}
       >
         <nav className="section-container py-6">
           <div className="space-y-1">
             {navItems.map((item) => {
-              const isActive = isHome && location.hash === item.hash;
+              const isActive =
+                isHome && location.hash === item.hash;
+
               return (
                 <a
                   key={item.hash}
-                  href={isHome ? item.hash : `/${item.hash}`}
-                  onClick={(e) => handleNavigation(e, item.hash)}
-                  className={`block py-3 px-4 text-base font-semibold transition-colors ${
+                  href={
+                    isHome
+                      ? item.hash
+                      : `/${item.hash}`
+                  }
+                  onClick={(e) =>
+                    handleNavigation(e, item.hash)
+                  }
+                  className={`block px-4 py-3 text-base font-semibold transition-colors ${
                     isActive
-                      ? "text-bronze-dark bg-bronze/5"
-                      : "text-charcoal hover:text-bronze-dark hover:bg-ivory/50"
+                      ? "bg-bronze/5 text-bronze-dark"
+                      : "text-charcoal hover:bg-ivory/50 hover:text-bronze-dark"
                   }`}
                 >
                   {item.label}
@@ -237,6 +279,7 @@ const Header = () => {
               <Phone size={18} className="text-bronze" />
               <span>اتصل الآن</span>
             </a>
+
             <a
               href={contactLinks.whatsapp}
               target="_blank"
