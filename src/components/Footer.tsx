@@ -37,7 +37,7 @@ const socialLinks = [
   },
   {
     label: "خرائط جوجل",
-    href: "https://maps.app.goo.gl/uqDHmFPQSiLbADp96",
+    href: "https://maps.app.goo.gl/ZS5dqatYaaYaNuqe6?g_st=awb",
     icon: <MapPinned size={20} className="shrink-0" />,
   },
 ];

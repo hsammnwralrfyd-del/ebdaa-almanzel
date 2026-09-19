@@ -90,7 +90,7 @@ export const Features = () => {
               className="text-sm font-bold tracking-[0.15em]"
               style={{ color: "#b88a2d" }}
             >
-              لماذا ربوع البلاد؟
+              لماذا إبداع المنزل؟
             </span>
 
             <div
@@ -125,7 +125,7 @@ export const Features = () => {
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={feature.image}
-                    alt={`${feature.title} - ربوع البلاد`}
+                    alt={`${feature.title} - إبداع المنزل`}
                     loading="lazy"
                     decoding="async"
                     width="800"
