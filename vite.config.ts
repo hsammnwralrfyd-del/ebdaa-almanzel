@@ -14,16 +14,17 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === "development" && componentTagger(),
-    // Copy .htaccess to dist after build
+    // Copy server config files to dist after build
     {
-      name: "copy-htaccess",
+      name: "copy-server-config",
       closeBundle() {
         if (mode === "production") {
           try {
             copyFileSync("public/.htaccess", "dist/.htaccess");
             copyFileSync("public/web.config", "dist/web.config");
+            copyFileSync("public/404.html", "dist/404.html");
           } catch (err) {
-            console.warn("Could not copy .htaccess or web.config:", err);
+            console.warn("Could not copy server config files:", err);
           }
         }
       },
