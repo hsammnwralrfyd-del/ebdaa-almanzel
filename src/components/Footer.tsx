@@ -110,13 +110,14 @@ export const Footer = () => {
               خدماتنا
             </h4>
             <div className="space-y-3">
-              {client.services.slice(0, 6).map((service) => (
-                <div
-                  key={service.title}
-                  className="text-sm text-ivory/65"
+              {client.navLinks.slice(1, 7).map((link) => (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="block text-sm text-ivory/65 transition-colors hover:text-bronze-light"
                 >
-                  {service.title}
-                </div>
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>
