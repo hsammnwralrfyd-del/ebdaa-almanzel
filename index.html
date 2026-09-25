@@ -302,9 +302,8 @@
     (function(l) {
       if (l.search && l.search.indexOf('?p=/') === 0) {
         var path = l.search.slice(3).split('&')[0].replace(/~and~/g, '&');
-        var base = l.pathname.endsWith('/') ? l.pathname : l.pathname + '/';
         window.history.replaceState(null, null,
-          base + path + l.hash
+          l.pathname.slice(0, -1) + path + l.hash
         );
       }
     }(window.location))
